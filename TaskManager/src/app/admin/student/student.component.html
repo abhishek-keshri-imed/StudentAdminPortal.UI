@@ -1,0 +1,47 @@
+<nav aria-label="breadcrumb" style="background-color: rgb(237, 241, 240);width: 100vw;  height: 35px;">
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="#" routerLink="dashboard">HOME</a></li>
+        <li class="breadcrumb-item active" aria-current="page">STUDENT</li>
+    </ol>
+</nav>
+
+<H5 style="margin-top: 50px;">STUDENT DETAILS</H5>
+<br>
+<table class="table table-bordered">
+    <thead>
+      <tr>
+        <th scope="col">ID</th>
+        <th scope="col">FIRST NAME</th>
+        <th scope="col">LAST NAME</th>
+        <th scope="col">DOB</th>
+        <th scope="col">EMAIL</th>
+        <th scope="col">MOBILE</th>
+        <th scope="col">GENDER</th>
+       
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let students of students | paginate: {
+          itemsPerPage: 10,
+          currentPage: pagination,
+          totalItems: allStudents
+        }">
+        <th scope="row">{{students.id}}</th>
+        <td>{{students.firstName}}</td>
+        <td>{{students.lastName}}</td>
+        <td>{{students.dateOfBirth}}</td>
+        <td>{{students.email}}</td>
+        <td>{{students.mobile}}</td>
+        <td>{{students.gender.description}}</td>
+       
+      </tr>
+      
+      
+    </tbody>
+  </table>
+
+  <div style="display: flex; justify-content: flex-end">
+    <pagination-controls
+      (pageChange)="renderPage($event)"
+    ></pagination-controls>
+</div>

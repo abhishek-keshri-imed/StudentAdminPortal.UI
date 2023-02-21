@@ -1,0 +1,346 @@
+<nav aria-label="breadcrumb" style="background-color:  #e9e6e6;width: 100%;  height: 35px;">
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="#" routerLink="">HOME</a></li>
+        <li class="breadcrumb-item active" aria-current="page">DASHBOARD</li>
+    </ol>
+</nav>
+
+
+<div class="row">
+    <div class="col-lg-3 pb-3" style="background-color: #e9e6e6 ;">
+        <div class="row">
+            <div class="col-11 text-white text-center mx-2 rounded pt-2 pb-2 mt-2 font-weight-bold"
+                style="background-color: #718d97; font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;">
+                {{Designation | uppercase}}
+            </div>
+
+            <div class="col-12 text-center mt-2">
+                <img src="https://www.citypng.com/public/uploads/small/11640168385jtmh7kpmvna5ddyynoxsjy5leb1nmpvqooaavkrjmt9zs7vtvuqi4lcwofkzsaejalxn7ggpim4hkg0wbwtzsrp1ldijzbdbsj5z.png"
+                    width="120px">
+            </div>
+
+            <div class="col-12 text-center pt-2 pb-2 font-weight-bold"
+                style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">
+                <b> {{Username}} </b>
+            </div>
+
+            <div class="col-12 text-center pt-2 pb-2 font-weight-bold"
+                style="font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">
+                TEAM SUMMARY
+            </div>
+
+            <div class="col-12 mb-3">
+                <ul class="list-group">
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                        NO. OF TEAM MEMBERS
+                        <span class="badge badge-secondary badge-pill"
+                            style="font-size: 20px; color: black;">{{NoOfTeamMembers}}</span>
+                    </li>
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                        TOTAL COST OF ALL PROJECTS
+                        <span class="badge badge-secondary badge-pill"
+                            style="font-size: 20px; color: black;">{{TotalCostOfAllProjects}}</span>
+                    </li>
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                        PENDING TASK
+                        <span class="badge badge-secondary badge-pill"
+                            style="font-size: 20px; color: black;">{{PendingTasks}}</span>
+                    </li>
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                        UPCOMINGS PROJECTS
+                        <span class="badge badge-secondary badge-pill"
+                            style="font-size: 20px; color: black;">{{UpcomingProjects}}</span>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="col-12 text-center pt-2 pb-2 "
+                style="font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">CLIENTS</div>
+            <div class="col-12">
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item" *ngFor="let Clients of Clients">{{Clients}}</li>
+
+                </ul>
+            </div>
+
+        </div>
+    </div>
+
+
+    <div class="col-lg-6">
+        <div class="row">
+            <div class="col-12 pt-0 pb-2" style="background-color: #e9e6e6;">
+                <div class="d-flex justify-content-between mb-3" style="background-color: #e9e6e6;">
+                    <div class=" pt-2 ">
+                        <div class="dropdown">
+                            <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton"
+                                data-toggle="dropdown" style="background-color: #718d97; border: 0px;">
+                                PROJECTS
+                            </button>
+                            <ul class="dropdown-menu">
+                                <li *ngFor="let Projects of Projects"><a class="dropdown-item" href="#">{{Projects}}</a>
+                                </li>
+
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="pt-2 ">
+                        <div class="dropdown">
+                            <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton"
+                                data-toggle="dropdown" style="background-color: #718d97; border: 0px;">
+                                YEAR
+                            </button>
+                            <ul class="dropdown-menu">
+                                <li *ngFor="let Years of Years"><a class="dropdown-item" href="#">{{Years}}</a></li>
+
+                            </ul>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-11 mt-1 mx-auto mt-1 text-white text-center pt-2 pb-2 mx-rounded font-weight-bold"
+                style="background-color: #718d97; font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">
+                PROJECTS BRIEFING</div>
+            <div class="col-12 ">
+                <table class="table table-borderless ms-3">
+                    <tr>
+                        <td>PROJECT COST</td>
+                        <td>  {{ ProjectCost | currency:"USD"}}</td>
+                    </tr>
+                    <tr>
+                        <td>CURRENT EXPENDITURE</td>
+                        <td>  {{ CurrenetExpenditure | currency:"USD"}}</td>
+                    </tr>
+                    <tr>
+                        <td>AVAILABLE FUNDS</td>
+                        <td> {{AvailableFunds | currency:"USD" }}</td>
+                    </tr>
+                </table>
+            </div>
+            <br>
+            <div class="col-11 mx-auto mt-1 text-white text-center pt-2 pb-2 mx-2 rounded font-weight-bold"
+                style="background-color: #718d97; font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">
+                TEAM MEMBERS SUMMARY</div>
+            <div class="col-12">
+                <table class="table ms-3 mt-3">
+                    <tr>
+                        <th>REGION</th>
+                        <th>TEAM MEMBERS COUNT</th>
+                        <th>TEMPORARILY MEMBERS</th>
+                    </tr>
+                    <tr>
+                        <td><b>East</b></td>
+                        <td>20</td>
+                        <td>4</td>
+                    </tr>
+                    <tr>
+                        <td><b>south</b></td>
+                        <td>15</td>
+                        <td>8</td>
+                    </tr>
+                    <tr>
+                        <td><b>west</b></td>
+                        <td>17</td>
+                        <td>1</td>
+                    </tr>
+                    <tr>
+                        <td><b>north</b></td>
+                        <td>15</td>
+                        <td>6</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+
+    </div>
+
+
+    <div class="col-lg-3" style="background-color: #e9e6e6;">
+        <div class="col-11 mx-auto mt-2 text-white text-center pt-1 pb-2 mx-2 rounded font-weight-bold "
+            style="background-color: #718d97; font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">
+            TEAM MEMBERS
+        </div>
+        <br>
+        <div class="accordion" id="accordionPanelsStayOpenExample">
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="panelsStayOpen-headingOne">
+                    <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true"
+                        aria-controls="panelsStayOpen-collapseOne">
+                        East
+                    </button>
+                </h2>
+                <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse show"
+                    aria-labelledby="panelsStayOpen-headingOne">
+                    <div class="accordion-body">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>ID</th>
+                                    <th>NAME</th>
+                                    <th>STATUS</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>2056799</td>
+                                    <td>Akash Sinha</td>
+                                    <td>Available</td>
+
+                                </tr>
+                                <tr>
+                                    <td>2078967</td>
+                                    <td>Raman kumar</td>
+                                    <td>Busy</td>
+
+                                </tr>
+                                <tr>
+                                    <td>2000897</td>
+                                    <td>Vedant Mishra</td>
+                                    <td>Busy</td>
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="panelsStayOpen-headingTwo">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#panelsStayOpen-collapseTwo" aria-expanded="false"
+                        aria-controls="panelsStayOpen-collapseTwo">
+                        West
+                    </button>
+                </h2>
+                <div id="panelsStayOpen-collapseTwo" class="accordion-collapse collapse"
+                    aria-labelledby="panelsStayOpen-headingTwo">
+                    <div class="accordion-body">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>ID</th>
+                                    <th>NAME</th>
+                                    <th>STATUS</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>2056799</td>
+                                    <td>Akash Sinha</td>
+                                    <td>Available</td>
+
+                                </tr>
+                                <tr>
+                                    <td>2078967</td>
+                                    <td>Raman kumar</td>
+                                    <td>Busy</td>
+
+                                </tr>
+                                <tr>
+                                    <td>2000897</td>
+                                    <td>Vedant Mishra</td>
+                                    <td>Busy</td>
+
+                                </tr>
+                            </tbody>
+                        </table>
+
+                    </div>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="panelsStayOpen-headingThree">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#panelsStayOpen-collapseThree" aria-expanded="false"
+                        aria-controls="panelsStayOpen-collapseThree">
+                        North
+                    </button>
+                </h2>
+                <div id="panelsStayOpen-collapseThree" class="accordion-collapse collapse"
+                    aria-labelledby="panelsStayOpen-headingThree">
+                    <div class="accordion-body">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>ID</th>
+                                    <th>NAME</th>
+                                    <th>STATUS</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>2056799</td>
+                                    <td>Akash Sinha</td>
+                                    <td>Available</td>
+
+                                </tr>
+                                <tr>
+                                    <td>2078967</td>
+                                    <td>Raman kumar</td>
+                                    <td>Busy</td>
+
+                                </tr>
+                                <tr>
+                                    <td>2000897</td>
+                                    <td>Vedant Mishra</td>
+                                    <td>Busy</td>
+
+                                </tr>
+                            </tbody>
+                        </table>
+
+                    </div>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="panelsStayOpen-headingFour">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#panelsStayOpen-collapseFour" aria-expanded="false"
+                        aria-controls="panelsStayOpen-collapseFour">
+                        South
+                    </button>
+                </h2>
+                <div id="panelsStayOpen-collapseFour" class="accordion-collapse collapse"
+                    aria-labelledby="panelsStayOpen-headingFour">
+                    <div class="accordion-body">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>ID</th>
+                                    <th>NAME</th>
+                                    <th>STATUS</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>2056799</td>
+                                    <td>Akash Sinha</td>
+                                    <td>Available</td>
+
+                                </tr>
+                                <tr>
+                                    <td>2078967</td>
+                                    <td>Raman kumar</td>
+                                    <td>Busy</td>
+
+                                </tr>
+                                <tr>
+                                    <td>2000897</td>
+                                    <td>Vedant Mishra</td>
+                                    <td>Busy</td>
+
+                                </tr>
+                            </tbody>
+                        </table>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+</div>

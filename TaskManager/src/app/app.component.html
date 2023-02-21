@@ -1,0 +1,39 @@
+<div class="mt-1">
+  <nav class="navbar navbar-expand-lg navbar-light" style="background-color:  #718d97">
+    <div class="container-fluid">
+      <a href="#" class="navbar-brand">
+        <img src="https://cdn.logojoy.com/wp-content/uploads/2018/05/01104800/1050-768x591.png" height="40" alt="TCS"
+          loading="lazy" />
+      </a>
+      <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
+        <div class="navbar-nav">
+          <a href="#" class="nav-item nav-link active" routerLink="dashboard">DASHBOARD</a>
+          <a href="#" class="nav-item nav-link" routerLink="about">ABOUT</a>
+          <a href="#" class="nav-item nav-link" routerLink="student">STUDENT</a>
+        </div>
+
+        <form class="d-flex">
+          <div class="input-group">
+            <input type="text" class="form-control">
+            <button type="button" class="btn" style="background-color: gold;color: black;">
+              <p class="mt-2" style="font-size: 12px;">Search</p>
+            </button>
+          </div>
+        </form>
+
+      </div>
+    </div>
+  </nav>
+</div>
+
+
+
+
+<div class="container-fluid">
+  <router-outlet>
+
+  </router-outlet>
+</div>
